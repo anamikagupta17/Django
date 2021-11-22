@@ -197,4 +197,4 @@ fm=StudentRegistration(auto_id='txt%s')
 
 configure label tags
  fm=StudentRegistration(label_suffix='  ')  : anything in place of null
-
+eg: P7Forms

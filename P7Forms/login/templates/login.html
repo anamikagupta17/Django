@@ -39,9 +39,32 @@
     {{form.username.field.required}}
 </form>
     
-    <h1>Fields by Loop</h1>
+    <h1>Fields by Loop All Fields </h1>
     <form action="">
+    {% for field in form %}
+    <P>
+    {{field.label}}
+    {{field}}
+    </P>
     
+    {% endfor %}
+    </form>
+
+   <h1>Fields by Loop handle hidden Fields </h1>
+    <form action="">
+    {% for field in form.visible_fields %}
+    <P>
+    {{field.label}}
+    {{field}}
+    </P>
+    
+    {% endfor %}
+    {% for hide in form.hidden_fields %}
+    <P>
+    {{hide}}
+    </P>
+    
+    {% endfor %}
     </form>
 </body>
 </html>
