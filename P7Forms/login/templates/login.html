@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+<h3><a href="{% url 'home' %}"> Home</a></h3>
+<form action="">
+    <div>
+        <label for="id_name">Name</label>
+        <input type="text" name="name" id="id_name">
+    </div>
+    <div>
+        <p>
+        <label for="{{form.username.id_for_label}}">UserName</label>
+            {{form.username}}
+        </p>
+    </div>
+    <h3>Dynamic </h3>
+     <div>
+        <p>
+           {{form.username.label_tag}}
+            {{form.username}}
+        </p>
+    </div>
+    <div>
+        <p>
+            {{form.password}}
+        </p>
+    </div>
+    <h4>Attributes</h4>
+    {{form.username.value}}
+    <br>
+    {{form.username.html_name}} <br>
+    {{form.username.help_text}} <br>
+    {{form.username.field.required}}
+</form>
+    
+    <h1>Fields by Loop</h1>
+    <form action="">
+    
+    </form>
+</body>
+</html>

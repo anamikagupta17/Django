@@ -176,6 +176,7 @@ showmigrations:list of migrations and status
 Django Form:
 1.Bound Form  : have data
 2.Unvound Form
+
 steps
 create a forms.py in app
 then create object of form in views.py and then use that object as h template
@@ -188,4 +189,12 @@ from rendering options
 {{form.as_ul}}:will render them wraped in tag <li> 
 {{form.name_of_field}}:will render maually as given
 
+manage id
+auto_id=False : False will not create id and remove label tag or 
+auto_id='txt' # its like true
+'id_%s' : in place of id_ any text
+fm=StudentRegistration(auto_id='txt%s')  
+
+configure label tags
+ fm=StudentRegistration(label_suffix='  ')  : anything in place of null
 
