@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Info</title>
+    <style>
+    th,td{
+        border: 1px solid black;
+        padding:2px;
+    }
+    </style>
+</head>
+<body>
+    <h1>Student Info </h1>
+    {%  if stu %}
+    <h1>Show All Data</h1>
+    {{stu}}
+    <table>
+        <tr>
+            <th>Id </th>
+            <th>Name </th>
+            <th>Email </th>
+            <th>Password </th>
+            <th>Comment </th>
+        </tr>
+        {% for st in stu%}
+        <tr>
+            <td>{{st.stuid}}</td>
+            <td>{{st.stuname}}</td>
+            <td>{{st.stuemail}}</td>
+            <td>{{st.stupass}}</td>
+            <td>{{st.comment}}</td>
+        </tr>
+        
+            {% endfor %}
+    </table>
+    {% else %}
+    <h1>No Data</h1>
+    {% endif %}
+
+<!-- for single data-->
+
+    {%  if stuSg %}
+    <h1>Show Single Data</h1>
+    {{stuSg}}
+    <table>
+        <tr>
+            <th>Id </th>
+            <th>Name </th>
+            <th>Email </th>
+            <th>Password </th>
+            <th>Comment </th>
+        </tr>
+        <tr>
+            <td>{{stuSg.stuid}}</td>
+            <td>{{stuSg.stuname}}</td>
+            <td>{{stuSg.stuemail}}</td>
+            <td>{{stuSg.stupass}}</td>
+            <td>{{stuSg.comment}}</td>
+        </tr>
+    </table>
+    {% else %}
+    <h1>No Single Data</h1>
+    {% endif %}
+    <br>
+<a href="{% url 'home' %}"  >Back to Home</a>
+</body>
+</html>

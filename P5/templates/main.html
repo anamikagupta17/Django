@@ -1,0 +1,41 @@
+{% load static %}
+<html>
+    <head><title>
+        {% block title%}
+        Page 
+        {% endblock %}
+    </title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+</head>
+    <body>
+ {% include 'nav.html' %}
+        <h3>
+            {% block content1 %}
+             Main Page
+            {% endblock %}
+        </h3>
+       
+<button type="button" class="btn btn-primary">Primary</button>
+<button type="button" class="btn btn-secondary">Secondary</button>
+<button type="button" class="btn btn-success">Success</button>
+<button type="button" class="btn btn-danger">Danger</button>
+<button type="button" class="btn btn-warning">Warning</button>
+<button type="button" class="btn btn-info">Info</button>
+<button type="button" class="btn btn-light">Light</button>
+<button type="button" class="btn btn-dark">Dark</button>
+<button type="button" class="btn btn-link">Link</button>
+<hr>
+ 
+{% block content2 %}
+{% endblock content2 %}
+
+
+    </body>
+   
+
+
+    <script src="{% static 'js/jquery.js' %}"></script>
+    <script src="{% static 'js/poper.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+</html>

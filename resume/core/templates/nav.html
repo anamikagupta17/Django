@@ -1,0 +1,14 @@
+ {% load static %}
+<div class="border-warning border-right h-100" style="border-right:1px solid">
+    <div class="text-center">
+        <img src="{% static 'images/profile.jpg' %}" alt="Profile" class="image-fluid rounded-circle mt-5" width="100px" height="100px" >
+        <h3 class="mt-5 text-white st-font">Anamika Gupta</h3>
+    </div>
+    <hr class="border-light">
+    <nav class="nav flex-column text-center">
+        <a href="{% url 'home' %}" class="nav-link {{home}}"  >Home</a>
+        <a href="{% url 'skills' %}" class="nav-link {{skill}}" >Skills</a>
+        <a href="{% url 'services' %}" class="nav-link {{service}}" >Services</a>
+        <a href="{% url 'contact' %}" class="nav-link {{contact}}" >Contact</a>
+    </nav>
+</div>

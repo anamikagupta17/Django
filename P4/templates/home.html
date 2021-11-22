@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+    <head>
+        <title>
+            Home
+        </title>
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+        <script src="{% static 'js/custom.js' %}"></script>
+    </head>
+<body>
+    <h1>Home Page</h1>
+    <h3>Course : course/learnDj,course/learnPy,</h3>
+    <h3>Fee : fee/feeDj,fee/feePy</h3>
+    <h3>Langauge : lnag/langOne,lang/langTwo</h3>
+    <img src="{% static 'images/img1.jpg' %}" alt='image1'>
+    <img src='{% get_static_prefix %}images/img2.jpg' alt='image2'>
+    <hr/>
+    <button onclick="dep()">Click</button>
+</body>
+</html>

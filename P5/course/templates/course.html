@@ -1,0 +1,18 @@
+{% extends 'main.html' %}
+
+{% block title%}
+Course  
+{% endblock%}
+
+
+{% block content1%}
+<h3>Courses</h3>
+<ul>
+    <li>Php</li>
+    <li>Python</li>
+    <li>CI</li>
+    <li>Django</li>
+    <li>{{d}}  </li>
+</ul>
+{% include 'topCourse.html' with p='Laravel' %} <!-- if we add only then it only p can access-->
+{% endblock %}

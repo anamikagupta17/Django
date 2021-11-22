@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+    <head>
+        <title>Course One</title>
+    </head>
+    <style>
+        body{
+            background-color: burlywood;
+            text-align: center;
+        }
+    </style>
+    <body>
+        <h1>Hello Django</h1>
+        <img src="{% static 'images/pic1.jpg' %}" alt='pic1'>
+    <img src='{% get_static_prefix %}images/pic2.jpg' alt='pic2'>
+    </body>
+</html>
