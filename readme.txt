@@ -137,12 +137,12 @@ ORM (object Realtional Mapper): enable application to intract with database(  my
 
 QuerySet: contains list of objects and allow to read data from db ,filter or order..
 model: each model maps a single database table
-modelClass:represent a table in db,each attribute reperent a db feild
+modelClass:represent a table in db,each attribute reperent a db field 
 
-model class create table like : ApplicationName_ClassName,and feilds will be the table columns
+model class create table like : ApplicationName_ClassName,and field s will be the table columns
 sytax: class className(models.Model):
-  feildname=models.feildType(arg,option) : feildType: datatype,feildname:column name
-feildname : shoud not contain more then 1 unerscore,lastword shoud not be underscore,not reserved keyword
+  field name=models.field Type(arg,option) : field Type: datatype,field name:column name
+field name : shoud not contain more then 1 unerscore,lastword shoud not be underscore,not reserved keyword
 * if we don't give primary key then it will create a column id autoincrement automatically  
 
 how to use model
@@ -197,4 +197,22 @@ fm=StudentRegistration(auto_id='txt%s')
 
 configure label tags
  fm=StudentRegistration(label_suffix='  ')  : anything in place of null
+
+form fields :
+sytax=FieldType(**kwarges)
+
+*required : by default it is True
+*label : defive accordignly 
+*help_text: any text like error message
+*error_message:lets you override default error message
+eg: FieldType(erro_message={'required':'Enter Your Name'})
+*validators : provide list of validation...
+*localize:enables the localization of form data input ,as well as rendered output
+*widget: in rendering the fields
+
 eg: P7Forms
+
+**Initial value will give prefrence to the run time(view), if not there in view then willtake form one
+CSRF protect: secure site from attackers
+** this will add hidden input token with random value in form tag 
+{% csrf_token %} 

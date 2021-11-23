@@ -5,21 +5,28 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
+    <style>
+    .helptext{
+        color:red;
+    }
+    </style>
 </head>
 <body>
 <h3><a href="{% url 'home' %}"> Home</a></h3>
 <form action="">
+<h3>Static </h3>
     <div>
         <label for="id_name">Name</label>
         <input type="text" name="name" id="id_name">
     </div>
+    <h3>Semi Dynamic By Field Name </h3>
     <div>
         <p>
         <label for="{{form.username.id_for_label}}">UserName</label>
             {{form.username}}
         </p>
     </div>
-    <h3>Dynamic </h3>
+    <h3>Dynamic By Field Name </h3>
      <div>
         <p>
            {{form.username.label_tag}}
@@ -31,11 +38,15 @@
             {{form.password}}
         </p>
     </div>
+    <button type="submit">Submit</button>
     <h4>Attributes</h4>
     {{form.username.value}}
     <br>
     {{form.username.html_name}} <br>
-    {{form.username.help_text}} <br>
+
+    {{form.username.help_text}}
+    
+     <br>
     {{form.username.field.required}}
 </form>
     
