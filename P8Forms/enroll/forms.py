@@ -11,7 +11,7 @@ class StudentRegistration(forms.Form):
         return valname
     #2
     def clean(self): # for whole form custom validation
-        cleaned_data = super().clean()
+        cleaned_data = super().clean() # it means parent class validation bhi work krega(will work)
         ename=self.cleaned_data['name']
         eemail=self.cleaned_data['email']
         passw=self.cleaned_data['password']

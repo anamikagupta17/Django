@@ -248,5 +248,9 @@ def clean_fieldname(self):
         return valname
 
 validationof django form at once(speciallay when custom validation)
+clean():
+cleaned_data = super().clean() : parent class validation logic also maintained
 
+field error : {{field.errors}} it will return in <ul class='errorlist'>
+error hooks : error_css_class='error' and required_css_class='required' : this will add one error and requried occur
 
