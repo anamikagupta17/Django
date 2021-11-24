@@ -21,4 +21,8 @@ def user(request):
 def success(req):
     return render(req,'success.html')
 
+def formFields(request):
+    fmm=User()
+    return render(request,'formFields.html',{'form':fmm})
+
 

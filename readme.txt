@@ -208,7 +208,7 @@ sytax=FieldType(**kwarges)
 eg: FieldType(erro_message={'required':'Enter Your Name'})
 *validators : provide list of validation...
 *localize:enables the localization of form data input ,as well as rendered output
-*widget: in rendering the fields
+*widget: in rendering the fields : default widget : TextInput
 
 eg: P7Forms
 
@@ -226,3 +226,27 @@ syntax: fm.cleaned_data
 
 
 **nonvalidate: in html5  for not validating  but django validation will run
+
+form Fields:formField(**kwargs)
+name=forms.CharField(min_lenth,max-lenth,strip,empty_value='df',erro_message={'required':"Enter your message"})
+strip: remove space from string before and after by default it is True
+empty_value : set some value as a empty so it will not give error while submitting
+
+agree=forms.BooleanField(label='I agree')
+price =forms.IntegerField(min_value=10,max_value=20)
+rate =forms.DecimalField(min_value=10,max_value=20,decimal_place=1)
+ft =forms.FloatField(min_value=10,max_value=20)
+
+there are many form feilds
+
+validation for specific fields (specially for custom validation for a field)
+syntax: need to write in forms.py
+def clean_fieldname(self):
+     valname=self.cleaned_data['fieldname']
+        if len(valname) < 4:
+            raise forms.ValidationError('Enter more then 3 char ')
+        return valname
+
+validationof django form at once(speciallay when custom validation)
+
+
