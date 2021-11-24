@@ -213,6 +213,16 @@ eg: FieldType(erro_message={'required':'Enter Your Name'})
 eg: P7Forms
 
 **Initial value will give prefrence to the run time(view), if not there in view then willtake form one
-CSRF protect: secure site from attackers
+
+CSRF protection: secure site from attackers
 ** this will add hidden input token with random value in form tag 
 {% csrf_token %} 
+
+@form Validation
+is_valid() :validate data
+syntax:fm.is_valid()
+cleaned_data: get only validated data 
+syntax: fm.cleaned_data
+
+
+**nonvalidate: in html5  for not validating  but django validation will run
