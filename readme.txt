@@ -254,3 +254,5 @@ cleaned_data = super().clean() : parent class validation logic also maintained
 field error : {{field.errors}} it will return in <ul class='errorlist'>
 error hooks : error_css_class='error' and required_css_class='required' : this will add one error and requried occur
 
+ModelForm: get rid of writing data 2 times(forms.py,models.py) : remove redendency
+(when we need same data in form which we wanted to insert)

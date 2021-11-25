@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration</title>
+    <style>
+    .errorlist{
+        color:red;
+    }
+    th,td{
+        border:1px solid black;
+        padding:2px;
+    }
+    </style>
+</head>
+<body>
+<small>admin login <br>
+login id : anamikagupta <br>
+password:root</small>
+<h3>Save Data into DB</h3>
+<form action="" method="post" novalidate>
+{% csrf_token %} 
+{{form.as_p}}
+<button type="submit">Submit</button>
+</form>
+
+  <h3>Student Info </h3>
+    {%  if stu %}
+    <table>
+        <tr>
+            <th>Id </th>
+            <th>Name </th>
+            <th>Email </th>
+            <th>Password </th>
+        </tr>
+        {% for st in stu%}
+        <tr>
+            <td>{{st.id}}</td>
+            <td>{{st.stuname}}</td>
+            <td>{{st.stuemail}}</td>
+            <td>{{st.stupass}}</td>
+        </tr>
+        
+            {% endfor %}
+    </table>
+    {% else %}
+    <h1>No Data</h1>
+    {% endif %}
+</body>
+</html>
