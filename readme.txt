@@ -256,3 +256,7 @@ error hooks : error_css_class='error' and required_css_class='required' : this w
 
 ModelForm: get rid of writing data 2 times(forms.py,models.py) : remove redendency
 (when we need same data in form which we wanted to insert)
+
+*for updating data in model form we can create instance  and update data
+ pi=Student.objects.get(pk=1) : model class object
+ fm=StudentRegistration(request.POST,instance=pi) #instance for update

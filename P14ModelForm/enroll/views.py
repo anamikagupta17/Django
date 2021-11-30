@@ -10,13 +10,23 @@ def showFormData(request):
     print(stuAll)
     if request.method=='POST':
         fm=StudentRegistration(request.POST)
+        # pi=Student.objects.get(pk=1)
+        # fm=StudentRegistration(request.POST,instance=pi) #instance for update
         if fm.is_valid():
             data=fm.cleaned_data
-            stu=Student(stuname=data['name'],stuemail=data['email'],stupass=data['password']) #for updating data add id=2
-            stu.save()  #used for update and insert both when you give id then it will update
-            
-            # stu=Student(id=5) 
-            # stu.delete() 
+            print('Name : ',data['name'])
+            print('Password : ',data['password'])
+            print('Email : ',data['email'])
+            stu=Student(name=data['name'],email=data['email'],password=data['password'])
+            stu.save()
+            #update
+            # stu=Student(id=4,name=data['name'],email=data['email'],password=data['password'])
+            # stu.save()
+            #delete
+            # stu=Student(id=5)
+            # stu.delete()
+            #instance for update
+           # fm.save()
             return render(request,'success.html',{'form':fm})
            
     else:
