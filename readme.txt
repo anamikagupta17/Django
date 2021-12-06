@@ -260,3 +260,12 @@ ModelForm: get rid of writing data 2 times(forms.py,models.py) : remove redenden
 *for updating data in model form we can create instance  and update data
  pi=Student.objects.get(pk=1) : model class object
  fm=StudentRegistration(request.POST,instance=pi) #instance for update
+
+ dynamic url
+ str:<my_id> : by default str
+ path converter
+ int:<int:my_id> : convert int or 0
+ slug:<slug:my_id>: string with ASCII number,underscore and hyphen eg:egab-d23
+path(route,view,kwargs,name) 
+kwargs : dictionary 
+{'check':'ok'}

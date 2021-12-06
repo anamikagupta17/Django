@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<body>
+    <h2>Home Template File</h2>
+    <p>By default String</p>
+    <h3><a href="{% url 'detail' 'Anamika' %}" >Student 1</a></h3>
+    <h3><a href="{% url 'detail' 2 %}" >Student 2</a></h3>
+    <h3><a href="{% url 'detail' 'Parul Gupta' %}" >Student 3</a></h3>
+    <p>Integer</p>
+    <h3><a href="{% url 'onlyInt' 1 %}" >Roll 1</a></h3>
+    <h3><a href="{% url 'onlyInt' 2 %}" >Roll 2</a></h3>
+    <h3><a href="{% url 'onlyInt' 3 %}" >Roll 3</a></h3>
+    <p>Sub Id</p>
+    <h3><a href="{% url 'subid' 1  1 %}" >Sub Id 1</a></h3>
+    <h3><a href="{% url 'subid' 2  2 %}" >Sub Id 2</a></h3>
+    <h3><a href="{% url 'subid' 3  3 %}" >Sub Id 3</a></h3>
+</body>
+</html>
