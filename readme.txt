@@ -269,3 +269,19 @@ ModelForm: get rid of writing data 2 times(forms.py,models.py) : remove redenden
 path(route,view,kwargs,name) 
 kwargs : dictionary 
 {'check':'ok'}
+
+custom path converter 
+to_python: Converts the input value into the expected Python data type
+to_url:  convert input value to the url format 
+
+**ModelForm  :(get data of from fields with other different methods) 
+ class Reg(froms.ModelForm):
+   class Meta:
+     model=User
+     fields =['id','name'] : fields name which we want to fetch (Fields Name)
+     or 
+     fields ='__all__' : set all fields (__all__)
+     or
+     exclude=['name']: this will exclude name and set all other (exclude)
+
+
