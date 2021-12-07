@@ -8,7 +8,7 @@ def home(req):
         if fm.is_valid():
             data=fm.cleaned_data
             reg=User(name=data['name'],email=data['email'],password=data['password'])
-            reg.save()
+            reg.save() # we can also use only save method to save data that will be without cleand data
             fm=Student() 
         
     else:

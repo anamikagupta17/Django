@@ -274,7 +274,7 @@ custom path converter
 to_python: Converts the input value into the expected Python data type
 to_url:  convert input value to the url format 
 
-**ModelForm  :(get data of from fields with other different methods) 
+**ModelForm  :(get data of from fields with  different types) 
  class Reg(froms.ModelForm):
    class Meta:
      model=User
@@ -283,5 +283,20 @@ to_url:  convert input value to the url format
      fields ='__all__' : set all fields (__all__)
      or
      exclude=['name']: this will exclude name and set all other (exclude)
+
+
+** ModelFrom Inheritance     :
+ # can use form API(normal form) anf modelFrom in a single class ,however modelFrom  appears first in MRO
+ # child from class inherit Parent class and also can inherit meta class of parent (if child class don't have meta then it will take parents meta class)
+ eg : 
+ fields in model : student_name,teacher_name,email,password (means using one table)
+ class Student(froms.ModelForm):
+   class Meta:
+    model=User
+    fields =['student_name','email','password']
+
+  class Teacher(Students):
+    class Meta(Student.Meta):
+     fields =['teacher_name','email','password']    
 
 
