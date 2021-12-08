@@ -299,4 +299,26 @@ to_url:  convert input value to the url format
     class Meta(Student.Meta):
      fields =['teacher_name','email','password']    
 
+ message Level : that define what kind of message is there eg: SUCCESSS,INFO,WARNING
+ message tags : we can use for css   eg: success ,info 
+ message automatically goes to the template
+get_level(): get current Level
+eg: messages.get_level(req) 
+set_level():can set level 
+eg: messages.set_level(req,)
+
+** by default debug level will not display untill you are not setting apart from that all level (higher) will display
+
+** we can change tag names in settings.py.
+from django.contrib.messages import constants as  messages
+ MESSAGE_TAGS={
+   messages_s.ERROR:'danger'
+ }
+
+get_messages(request):this will get messages outside template like in any python file
+eg: msg=messages.get_messages(request) 
+
+
+Authentication: means validating  user or anything
+Authorization : process to check the rights for the authenticated user
 

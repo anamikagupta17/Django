@@ -1,0 +1,23 @@
+{% extends 'home.html' %}
+{% block content %}
+<div class="row">
+    <style>
+        .alert-error{
+            color: red;
+        }
+        .alert-debug{
+            color: blue;
+        }
+    </style>
+    <div class="col-sm-6">
+        {% if messages %}
+        {% for msg in messages  %}  
+         <p class="text-center alert alert-{% if msg.tags %}{{msg.tags}}{% endif %}">{{msg}}</p>
+        {% endfor %}
+        {% endif %}
+        
+    </div>
+</div>
+<a href="{% url 'home' %}" class="btn btn-info">Back to Home</a>
+
+{% endblock content %}
