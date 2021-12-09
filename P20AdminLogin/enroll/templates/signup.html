@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Registration</title>
+    <style>
+        .success{
+            color:green;
+            }
+    </style>
+</head>
+<body>
+    <h1>Create Admin User & Login & Logout Using predifiend Forms</h1>
+    <h3>Create Admin Users</h3>
+    {% if messages %}
+    {% for msg in messages %}
+    <p {% if msg.tags %} class='{{msg.tags}}' {% endif %}> {{msg}} </p>
+    {% endfor %}
+    {% endif %}
+        <form action="" method="post" novalidate>
+            {% csrf_token %}
+            {% for f in fm %}
+            {{f.label_tag}}{{f}}{{f.errors|striptags}} <br><br>
+            {% endfor %}
+            <button type="submit">Submit</button>
+        </form>
+        <br><br>
+    <a href="{% url 'login' %}">Login</a>
+</body>
+</html>
