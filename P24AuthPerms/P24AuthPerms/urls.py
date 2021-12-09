@@ -1,4 +1,4 @@
-"""P23Profile URL Configuration
+"""P24AuthPerms URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/3.2/topics/http/urls/
@@ -21,9 +21,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.signup,name='signup'),
     path('login/', views.userLogin,name='login'),
-    path('profile/', views.profile,name='profile'),
+    path('dashboard/', views.dashboard,name='dashboard'),
     path('logout/', views.userLogout,name='logout'),
-    path('changepas/', views.changepas,name='changepas'),
-    path('user/<int:id>', views.userDetails,name='user'),
+   
 
 ]

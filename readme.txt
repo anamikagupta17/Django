@@ -322,3 +322,7 @@ eg: msg=messages.get_messages(request)
 Authentication: means validating  user or anything
 Authorization : process to check the rights for the authenticated user
 
+**by default admin has all permissions
+""perms : store all the permissions of logged in user
+
+**permissions: create automatic  when we create model(view,add,delete,change)
