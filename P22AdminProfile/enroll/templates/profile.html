@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <style>
+        .success{
+            color:green;
+        }
+    </style>
+</head>
+<body>
+    <h2>Profile Page</h2>
+    <h3>Welcome {{name}}</h3>
+    {% if messages %}
+    {% for msg in messages %}
+    <p {% if msg.tags %} class='{{msg.tags}}' {% endif %}> {{msg}} </p>
+    {% endfor %}
+    {% endif %}
+    <a href="{% url 'changepas'%}">Change Password</a> &nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="{% url 'logout'%}">Logout</a>
+    <hr>
+    <br>
+
+    <form action="" method="post" novalidate>
+        {% csrf_token %}
+        {% if form.non_field_errors %}
+            {% for error in form.non_field_errors %}
+            <p class='error'>{{error}}</p>
+            {% endfor %}
+        {% endif %}
+        
+        {% for fm in form %}
+             {{fm.label_tag}}{{fm}} {{fm.errors|striptags}} <br><br>
+        {% endfor %}
+        
+        <button type="submit">Update</button>
+    </form>
+
+
+</body>
+</html>

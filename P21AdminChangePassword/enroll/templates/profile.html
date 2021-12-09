@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+</head>
+<body>
+    <h2>Profile Page</h2>
+    <h3>Welcome {{name}}</h3>
+    {% if messages %}
+    {% for msg in messages %}
+    <p {% if msg.tags %} class='{{msg.tags}}' {% endif %}> {{msg}} </p>
+    {% endfor %}
+    {% endif %}
+    <a href="{% url 'changepas'%}">Change Password</a> &nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="{% url 'logout'%}">Logout</a>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="{% url 'newchangepas'%}">Change Password 2 </a>
+</body>
+</html>
