@@ -1,0 +1,22 @@
+body{
+    background-color: rgb(74,74,74);
+    color: antiquewhite;
+}
+
+.jumbo-color{
+    background-color: rgb(83,81,81);
+}
+
+.form-control {
+    background-color: rgb(177,168,168);
+}
+
+.jumbo-lead{
+    padding: 30px;
+}
+
+.jumbo-title{
+    padding-left: 23px;
+    padding-top: 23px;
+    font-weight: 700;
+}
