@@ -117,18 +117,7 @@ eg: P5
 include for template : include html pages
 {% include template_var_name %} or {% include 'abcd.html' %}
 
-project deployment
 
-collect all installed packages :  pip freeze >req.txt (store in any file)
-create a STATIC_ROOT =base_dir/'static' : any folder for static files in settings.py
-zip you project
-go to anywhere python site and upload it
-create viretual env : mkvirtualevn myvutrualenvname --python-/usr/bin/python3.7 (your version in which project created)
-then insall above pakcage : pip install -r req.txt
-change in wsgi file project name and foldername in django section
-add static file and path in files tab static section
-collect all static files in cmd by commond: python manage.py collectstatic 
-reload project 
 
 ORM (object Realtional Mapper): enable application to intract with database(  mysql,sqllite,..)
 * create database schema from defined class  or models (means create schema using python classes)

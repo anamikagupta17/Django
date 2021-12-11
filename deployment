@@ -1,0 +1,19 @@
+project deployment
+
+collect all installed packages :  pip freeze >req.txt (store in any file)
+create a STATIC_ROOT =base_dir/'static' : any folder for static files in settings.py
+zip you project
+go to anywhere python site and upload it
+create viretual env : mkvirtualenv --python=python3.7.8  envname (your version in which project created)
+open console in python anywhere unzip  : unzip projectname
+go in web create app create by manual and then select your python .
+add your virtual invarment name in  web virtual env section
+go to your project folder : cd projectnamefolder name
+then insall above pakcage : pip install -r req.txt
+change in wsgi file project name and foldername in django section
+
+collect all static files in cmd by commond: python manage.py collectstatic 
+add static file and path in files tab static section
+go to your project settings.py : debug False ans allowed path set ['*']
+
+reload project 
