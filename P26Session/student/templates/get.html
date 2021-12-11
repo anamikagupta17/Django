@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Seesion</title>
+</head>
+<body>
+    <h1>Get Session</h1>
+
+    <a href="{% url 'home'  %}">Home</a>
+    <br>
+    <h3>Session Name 1 : {{name}} </h3>
+    <h3>Session Name 2 : {{name2}} </h3>
+    {% if 'name' in request.session %}
+    <a href="{% url 'del'  %}">Delete Session 1</a>
+    {% endif %}
+    
+<hr>
+    <h3>Fetch Session  keys</h3>
+    {% for key in request.session.keys  %}
+    {{key}} <br>
+    {% endfor %}
+
+    <br>
+    <hr>
+    <h3>Fetch Session  Items</h3>
+    {% for item in items  %}
+    {{item}} <br>
+    {% endfor %}
+    <br>
+    <h3>Keys and Values</h3>
+    {% for key,value in items  %}
+    {{key}} : {{value}} <br>
+    {% endfor %}
+<hr>
+<h1>If not available then Set Default</h1>
+{{age}}
+
+<hr>
+<h2>Flush Method</h2>
+<a href="{% url 'flush'  %}">Flush</a>
+<hr><hr>
+<h2>Few More Methods</h2>
+get_session_cookie_age : {{request.session.get_session_cookie_age}} <br>
+get_expiry_age : {{request.session.get_expiry_age}} <br>
+get_expiry_date : {{request.session.get_expiry_date}} <br>
+get_expire_at_browser_close : {{request.session.get_expire_at_browser_close}} <br>
+<br>
+    <br>
+
+</body>
+</html>

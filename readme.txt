@@ -120,7 +120,7 @@ include for template : include html pages
 project deployment
 
 collect all installed packages :  pip freeze >req.txt (store in any file)
-create a STATIC_ROOT =base_dir/'static' : any folder for static files
+create a STATIC_ROOT =base_dir/'static' : any folder for static files in settings.py
 zip you project
 go to anywhere python site and upload it
 create viretual env : mkvirtualevn myvutrualenvname --python-/usr/bin/python3.7 (your version in which project created)
@@ -326,3 +326,21 @@ Authorization : process to check the rights for the authenticated user
 ""perms : store all the permissions of logged in user
 
 **permissions: create automatic  when we create model(view,add,delete,change)
+
+
+Cookies : stored in client machine
+Cookies limitation in django :
+*can increate loading time first time if more data
+*can only store 4060 byte data not more then this
+*user can missuse detail
+
+
+session:stored in server side
+** store a session id in cookies client machine  and that seesion id stored in db as session key
+** session stored in database
+** by default session expire after 2 weeks
+flush : delete session from cookies and database
+
+** for path,timezone,session_cookie_age.. we need to  do all in settings py.file
+session_httponly : if true then in clinet side we can not access cookies  by using javascript
+
