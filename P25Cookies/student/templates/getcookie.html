@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Cookies</title>
+</head>
+<body>
+    <h1>Get Cookies</h1>
+    <h2>Cookie Name : {{name}} </h2>
+    <a href="{% url 'delcookie' %}">Delete Cookie</a>
+    {% if name == 'Guest' %}
+    <h3>Cookie Expired</h3>
+    <a href="{% url 'setcookie' %}">Set Again</a> &nbsp;&nbsp;&nbsp;&nbsp;
+    {% endif %}
+    
+</body>
+</html>
