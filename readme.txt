@@ -331,5 +331,16 @@ session:stored in server side
 flush : delete session from cookies and database
 
 ** for path,timezone,session_cookie_age.. we need to  do all in settings py.file
-session_httponly : if true then in clinet side we can not access cookies  by using javascript
+session_httponly : if true then in client side we can not access cookies  by using javascript
+
+***
+if want to set session age for all then we can set in settings.py : session_cookie_age  =10(sec)
+**
+request.seesion.modified=True : this will modify session time (till given time means age) 
+
+Session in file:(it will store seesion data in file in place of db)
+in settings.py need to rewrite seesion engine and need need to set seesion path
+SESSION_ENGINE='Django.contrib.seesion.backends.file'
+SESSION_FILE_PATH=BASE_DIR/'session'  :session is folder name
+
 
