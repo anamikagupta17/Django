@@ -344,3 +344,64 @@ SESSION_ENGINE='Django.contrib.seesion.backends.file'
 SESSION_FILE_PATH=BASE_DIR/'session'  :session is folder name
 
 
+Cache:store data to sppedup your site
+we can store 
+ 1.full site,2.view base,3.template fragment(any part of html code)
+ can store in 
+1: db 
+2. file
+3. local memory
+
+
+** set time : TIME_ZONE = 'Asia/Kolkata' in settings .py also USE_TZ=False
+1 Full site or per Site
+need to add 2 middleware in settings.py
+DB:
+ need to define Cache tables and type  in settings.py
+syntax:
+CACHES= {
+  'default':{
+      'BACKEND':'django.core.cache.backends.db.DatabaseCache',
+      'LOCATION':'enroll_cache'
+  }
+}
+
+need to run commond to create cache table : python manage.py createcachetable
+
+file: need to set
+CACHES= {
+  'default':{
+      'BACKEND':'django.core.cache.backends.filebased.FileBasedCache',
+      'LOCATION':'C:\Users\Anamika Gupta\Desktop\Python\Django\P28Cache\P28Cache\cache'  #file path
+  }
+}
+
+local memory : this is by default if no one else is specified
+CACHES= {
+  'default':{
+      'BACKEND':'django.core.cache.backends.locmem.LocMemCache',
+      'LOCATION':'unique-snowflake'  #by default any name
+  }
+}
+
+eg: P28Cache(on change of course html file, new changes will display only when cache expire)
+
+2. Per View(for per url diiferenct ache will create)
+need to add 2 middleware in settings.py
+from djnago.views.decorators.cache import cache_page
+@cache_page(timeout,cache,key_prefix)
+or 
+can use in url also
+urlpatterns=[
+path('', cage_page(40)(views.home) ,name='home'),
+]
+timeout:cache timeout in seconds
+cache:cache
+key_prefix:any key (will overide depend on view)
+
+3 tempalte fragment cache:
+{% load cache %}  : need to add in html at the top
+{% cache timeout name variable using="" %} {% endcahce name%} : code insdie this block will be cached
+using : this will be last tag for cache eg : using='localcache' if not abilabe then will use default
+
+**if timeout None then it will cache for forver

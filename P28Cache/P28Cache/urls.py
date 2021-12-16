@@ -15,7 +15,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from enroll import views
+#from django.views.decorators.cache import cache_page
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', views.home ,name='home'),
+    #path('view/',cache_page(30)(views.viewBased) ,name='view'), #for url cache
+    path('view/', views.viewBased ,name='view'), 
+    path('contact/', views.contact ,name='contact'),
+    path('template/', views.templateFragmentBased ,name='template'),
 ]

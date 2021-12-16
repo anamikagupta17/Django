@@ -37,12 +37,15 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'enroll',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.cache.UpdateCacheMiddleware', #for  need to add  only for whole site,per view
     'django.middleware.common.CommonMiddleware',
+    'django.middleware.cache.FetchFromCacheMiddleware', #need to add here only for whole site,per view
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
@@ -105,19 +108,46 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Kolkata'
 
 USE_I18N = True
 
 USE_L10N = True
 
-USE_TZ = True
+USE_TZ = False #fasle for timezone otherwise True 
 
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
+CACHE_MIDDLEWARE_SECONDS=30  # need to comment for view based and template fragment cache
+
+#1 for db
+CACHES= {
+    'default':{
+        'BACKEND':'django.core.cache.backends.db.DatabaseCache',
+        'LOCATION':'enroll_cache'
+    }
+}
+
+#2 for file 
+
+# CACHES= {
+#   'default':{
+#       'BACKEND':'django.core.cache.backends.filebased.FileBasedCache',
+#       'LOCATION':'C:/Users/Anamika Gupta/Desktop/Python/Django/P28Cache/P28Cache/cache'  #file path
+#   }
+# }
+
+#3 local memory   
+
+# CACHES= {
+#   'default':{
+#       'BACKEND':'django.core.cache.backends.locmem.LocMemCache',
+#       'LOCATION':'unique-snowflake'  #by default
+#   }
+# }
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
