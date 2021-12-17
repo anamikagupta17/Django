@@ -405,3 +405,5 @@ key_prefix:any key (will overide depend on view)
 using : this will be last tag for cache eg : using='localcache' if not abilabe then will use default
 
 **if timeout None then it will cache for forver
+
+Low Level Cache API : cache set of code when data didnt change frequently
