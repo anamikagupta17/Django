@@ -424,3 +424,6 @@ need to add signals in apps.py and init.py
 
 **can use signals for getting the ip of user or login count,track login or track failed login  or many things....
 
+Custom Signals: we don't add anything in apps.py and init.py
+send() : does not catch exceptions //used for sending signals
+send_robust():can exceptions  //used for sending signals
