@@ -407,3 +407,15 @@ using : this will be last tag for cache eg : using='localcache' if not abilabe t
 **if timeout None then it will cache for forver
 
 Low Level Cache API : cache set of code when data didnt change frequently
+
+
+Signals:
+1.sender:who sends signal
+2.signal : signal
+3.reciver:who recive signal
+
+can use 2 methods
+1. using: user_logged_in.connect(login_success,sender=User)
+2. using decorators
+
+**can use signals for getting the ip of user or login count,track login or track failed login  or many things....
