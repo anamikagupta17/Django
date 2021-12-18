@@ -418,4 +418,7 @@ can use 2 methods
 1. using: user_logged_in.connect(login_success,sender=User)
 2. using decorators
 
+need to add signals in apps.py and init.py
+
 **can use signals for getting the ip of user or login count,track login or track failed login  or many things....
+
