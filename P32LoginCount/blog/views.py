@@ -4,7 +4,7 @@ from blog.froms import SignupForm,LoginFrom,PostForm
 from django.contrib import messages
 from django.contrib.auth.models import Group
 from .models import Post
-
+from django.core.cache import cache
 
 # Create your views here.
 
@@ -25,7 +25,8 @@ def dashboard(req):
         full_name=user.get_full_name()
         gps=user.groups.all()
         ip=req.session.get('ip',0)
-        return render(req,'dashboard.html',{'posts':posts,'name':full_name,'groups':gps,'ip':ip})
+        ct=cache.get('count',version=user.pk) #loggedin count
+        return render(req,'dashboard.html',{'posts':posts,'name':full_name,'groups':gps,'ip':ip,'count':ct})
     else:
         return HttpResponseRedirect('/login/')
     

@@ -406,7 +406,9 @@ using : this will be last tag for cache eg : using='localcache' if not abilabe t
 
 **if timeout None then it will cache for forver
 
-Low Level Cache API : cache set of code when data didnt change frequently
+
+
+Low Level Cache API : cache set of code when data didnt change frequently(no need to add middilewares)
 
 
 Signals:
