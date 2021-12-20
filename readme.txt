@@ -455,3 +455,5 @@ these all define in common middileware
 **AuthMiddleware : authentication
 etc....
 in settings.py : APPEND_SLASH=False we can do chnages(no recommanded)
+
+##middilewares set globally
