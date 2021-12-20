@@ -424,6 +424,34 @@ need to add signals in apps.py and init.py
 
 **can use signals for getting the ip of user or login count,track login or track failed login  or many things....
 
-Custom Signals: we don't add anything in apps.py and init.py
+Custom Signals: (we don't add anything in apps.py and init.py:reminder)
 send() : does not catch exceptions //used for sending signals
 send_robust():can exceptions  //used for sending signals
+
+
+Middleware: (midiaters)
+ It is framework of hooks,its low level plugin
+*built in middleware : in settings.py there are many middlewares
+*custom middleware:
+
+eg:  sender ->request -> middileware1 ,middileware2,..... ->reciver(view) response  vice versa
+ middileware also can respond (means send response)
+** middilewares can live any where in python
+after creating middileware need to add in settings.py in a order for activating
+
+**get_response: goes to next middleware or view (if no  next middileware then go to the view)
+
+Middleware Hooks: these hooks we can use only in class based middilewares
+process_view(req,view_fnc,view_args,view_kwargs):
+process_exception(req,exception): for handling exceptions ,it should run either None  or httpResponse
+process_template_response(request,response):call just after view finish,it return templateResponse from view or from middilewares
+
+built in middilewares:
+these all define in common middileware
+**APPEND_SLASH : True in url if you don't give / at the end it take automatic if True else will not dispay view
+**PREPEND_WWW:True take www by fedault if not given
+**MessageMiddleware:for message
+**SessionMiddleWare: for session
+**AuthMiddleware : authentication
+etc....
+in settings.py : APPEND_SLASH=False we can do chnages(no recommanded)
