@@ -457,3 +457,40 @@ etc....
 in settings.py : APPEND_SLASH=False we can do chnages(no recommanded)
 
 ##middilewares set globally
+
+
+Query Set API : used for database to fetch ,order,filter,...
+eg :
+all():fetching all data
+students=Student.objects.all() 
+print('Sql Query : ',students.query)
+
+filter(**kwargs): return queryset always with matching data
+exclude(**kwarges): return not matching data
+order by(*fields):  in case of name order using uni code number not alphapet number so difference Capital or small
+ 'fields':Ascending oreder
+ '-field':decending order
+
+reverse() : rever of data
+values(): return dictionary list if no values given
+disticnt(): repmve duplicate
+values_list(): return tuples for name we need to give Name=Ture
+using(alias): in case of multiple db eg: students=Student.objects.using('default')
+date(field,kind,order=ASC,txinfo=None)
+ field: field name
+ kind:year,month,day week...
+
+datetimes(field,kind,order=ASC,txinfo=None) : return datetime
+none(): return empty query set
+union(*other_qs,all=False):   combine 2 or more
+ query sets  select only distict value if you want allow duplicate need to set all=True
+ columns shoud be equal in all tables
+
+ intersection(*other_qs):
+ difference(*other_qs): get the difference data
+ raw(query,params=None,translation=None): for custom query
+ AND,OR : combine to query set eg 1: stu=Student.objects.filter(marks=80) & Student.objects.filter(city='Lucknow')
+ eg 2: stu=Student.objects.filter(Q(marks=80)& Q(id=2))
+ 
+ ** these all above method return query set
+
