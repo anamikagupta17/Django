@@ -463,7 +463,7 @@ Query Set API : used for database to fetch ,order,filter,...
 eg :
 all():fetching all data
 students=Student.objects.all() 
-print('Sql Query : ',students.query)
+print('Sql Query : ',students.query) # only for query set
 
 filter(**kwargs): return queryset always with matching data
 exclude(**kwarges): return not matching data
@@ -486,11 +486,36 @@ union(*other_qs,all=False):   combine 2 or more
  query sets  select only distict value if you want allow duplicate need to set all=True
  columns shoud be equal in all tables
 
- intersection(*other_qs):
- difference(*other_qs): get the difference data
- raw(query,params=None,translation=None): for custom query
- AND,OR : combine to query set eg 1: stu=Student.objects.filter(marks=80) & Student.objects.filter(city='Lucknow')
- eg 2: stu=Student.objects.filter(Q(marks=80)& Q(id=2))
+intersection(*other_qs):
+difference(*other_qs): get the difference data
+raw(query,params=None,translation=None): for custom query
+AND,OR : combine to query set eg 1: stu=Student.objects.filter(marks=80) & Student.objects.filter(city='Lucknow')
+eg 2: stu=Student.objects.filter(Q(marks=80)& Q(id=2))
  
- ** these all above method return query set
+** these all above method return query set
 
+ methods  return single query set:
+  get(pk or colname):return single object,col name should be unique
+  first(): return first matched object by default order by primary key
+  last():return last matched object by default order by primary key
+  latest(field) : return latest object(new)
+  earliest(field): return earliest (old)
+  exists(): return true if queryset have result else false
+
+method not retun new query set  :
+create(): insert and save data in table
+get_or_create(default=nONE,**kwargs): get if exist else create
+update():first filter then update and update work on query set only
+students=Student.objects.filter(name='Anamika').update(city='Lucknow')
+update_or_create(default=nONE,**kwargs): update if exist else create create only if not given field are set to null
+bulk_create(objs):create multiple,need to give list of objects and
+  this method will not trigger pre_save and post_save signals
+  also will not work in child inheritance 
+
+bulk_update(objs,field,batch_size=None):update bulk date can not update primary key
+batch_size : control  how many objects save in one query
+in_bulk(): take list of field values[id,name]
+
+delete(): delete data
+
+  
