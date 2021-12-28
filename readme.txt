@@ -518,4 +518,17 @@ in_bulk(): take list of field values[id,name]
 
 delete(): delete data
 
+
+Field Lookups: mainly used for sql where clause 
+syntax:field__lookuptype=value
+ exact: exact match ,case sensitive
+ iexact: exact match with case insensitive
+ date,time,sec,hour,mintue: look works with only datetime type datatype
+ year,week,day,weekday,quarter: both date and datetime both
+
+
+** Aggregate function works on query set
+
+Q object: encapsulate a collection of keywords
+
   

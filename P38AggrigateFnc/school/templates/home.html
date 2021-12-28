@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+        tr,td,th{
+            border:1px solid black;
+            padding:10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Student Information</h1>
+
+    <table>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Roll</th>
+            <th>City</th>
+            <th>Marks</th>
+            <th>Passing Date</th>
+            <th>Admission Date</th>
+        </tr>
+        {% for student in  students %}
+        <tr>
+            <td>{{student.id}}</td>
+            <td>{{student.name}}</td>
+            <td>{{student.roll}}</td>
+            <td>{{student.city}}</td>
+            <td>{{student.marks}}</td>
+            <td>{{student.pass_date}}</td>
+            <td>{{student.admit_date}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    
+    <h1>Average Data : {{average}} </h1>
+    <h2>Average : {{average.marks__avg}}</h2>
+    <h1>Sum Data : {{sum}} </h1>
+    <h2>Sum : {{sum.marks__sum}}</h2>
+    <h1>Min Data : {{min}} </h1>
+    <h2>Min : {{min.marks__min}}</h2>
+    <h1>Max Data : {{max}} </h1>
+    <h2>Max : {{max.marks__max}}</h2>
+    <h1>Count Data : {{count}} </h1>
+    <h2>Count : {{count.marks__count}}</h2>
+</body>
+</html>
