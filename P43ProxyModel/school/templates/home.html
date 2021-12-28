@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        th,tr,td{
+            border:1px solid red;
+            padding:10px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Exam Center Information</h2>
+<h2>Original Exam Center</h2>
+    <table>
+        <tr>
+            <th>Id</th>
+            <th>Exam Center</th>
+            <th>City</th>
+        </tr>
+        {% for center in  centers %}
+        <tr>
+            <td>{{center.id}}</td>
+            <td>{{center.cname}}</td>
+            <td>{{center.city}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <h2>Proxy Exam Center</h2>
+    <table>
+        <tr>
+            <th>Id</th>
+            <th>Exam Center</th>
+            <th>City</th>
+        </tr>
+        {% for mycenter in  proxycenters %}
+        <tr>
+            <td>{{mycenter.id}}</td>
+            <td>{{mycenter.cname}}</td>
+            <td>{{mycenter.city}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    
+</body>
+</html>
