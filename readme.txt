@@ -537,6 +537,11 @@ Model Inheritance Abstract Class: it will  used when we need common information 
  child class can override base class method,objects
  eg P41
 
- Multi Table Inheritance: each model have there own table means base class and child class  will have tables
+ Multi Table Inheritance: each model have there own table means base class and child class both will have tables
+ connect tables by forieg key (child class inherit fields of baseclass)
+ (one to one relation)
+ eg: P42
 
+ Proxy Model:want to change behaviour of model 
+ it create proxy of original model ,need to set proxy attribute of meta class True
   
