@@ -531,4 +531,12 @@ syntax:field__lookuptype=value
 
 Q object: encapsulate a collection of keywords
 
+Model Inheritance Abstract Class: it will  used when we need common information in many models or model class
+ abstract class  will not create db table or manger(object)
+ neet to add class Meta and abstact =True thn only a model class will be Abstract class
+ child class can override base class method,objects
+ eg P41
+
+ Multi Table Inheritance: each model have there own table means base class and child class  will have tables
+
   
