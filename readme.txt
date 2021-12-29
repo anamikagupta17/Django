@@ -542,10 +542,18 @@ Model Inheritance Abstract Class: it will  used when we need common information 
  (one to one relation)
  eg: P42
 
- Proxy Model:want to change behaviour of model (behave differently)
+ Proxy Model:want to change behaviour of model (behave differently)(use for different behaviour)
  it create proxy of original model ,need to set proxy attribute of meta class True
  ** proxy model need to inherit from one non-abstract clsss(means class shoud not be abstract class)
  ** can't inherit from multiple non-abstrct class
  ** proxy model can inherit from any number of proxy model
  eg:43 (create one table but display in both models  and if insert in onetable but  will display for both models)
-  
+
+
+ Model Mangaer: in model db objects is a Mangaer ( by default : objects=models.Manager(), already define so no need to set this)
+ we can chnage manager name in model we can change manager name.
+ eg : P44
+
+ Custom Model Manager: for custom queries we use this to save time
+  * used in modifying  initial queryset
+  * can add extra custom manger methods 
