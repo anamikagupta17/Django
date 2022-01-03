@@ -557,3 +557,15 @@ Model Inheritance Abstract Class: it will  used when we need common information 
  Custom Model Manager: for custom queries we use this to save time
   * used in modifying  initial queryset
   * can add extra custom manger methods 
+
+Model Realionship : we can give choice who can add page or not (page means other table record)
+ 1. One to One eg: can only have one to one record in 2 tables only 1-1 row in each table
+    *CASCADE : if user deleted then all pages or record in other table with that user will be deleted
+    *PROTECT : can not delete user because page created with this user
+    ** Reverse Deletion: if we wanted to delete user on delete of page then need to create signals(post_delete) and write custom code 
+    syntax: in signals.py
+    @reciver(post_delete,sender=Page)
+    def delete_related_user(sender,instance,**kwargs):
+    instance.user.delete()
+ 2. One to many : one user create multiple post or pages
+ 3. many to many :multiple users can write one song or vice versa
