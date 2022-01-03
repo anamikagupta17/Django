@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Songs</title>
+    <style>
+        table,th,tr,td{
+            padding:10px;
+            border:1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h2>Songs</h2>
+    <h3>All Songs</h3>
+    <table>
+        <tr>
+            <th>Song Name</th>
+            <th>Song Duration</th>
+            <th>Song Written By</th>
+        </tr>
+        {% for song in songs %}
+        <tr>
+            <td>{{song.song_name}}</td>
+            <td>{{song.song_duration}}</td>
+            <td>{{song.written_by}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+
+    <h3>Songs Filtered By Duration</h3>
+    <table>
+        <tr>
+            <th>Song Name</th>
+            <th>Song Duration</th>
+            <th>Song Written By</th>
+        </tr>
+        {% for dt1 in data1 %}
+        <tr>
+            <td>{{dt1.song_name}}</td>
+            <td>{{dt1.song_duration}}</td>
+            <td>{{dt1.written_by}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <h3>Songs Filtered By Username</h3>
+    <table>
+        <tr>
+            <th>Song Name</th>
+            <th>Song Duration</th>
+            <th>Song Written By</th>
+        </tr>
+        {% for dt2 in data2 %}
+        <tr>
+            <td>{{dt2.song_name}}</td>
+            <td>{{dt2.song_duration}}</td>
+            <td>{{dt2.written_by}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <h3>
+        <a href="{% url 'home' %}">Home</a>
+    </h3>
+    
+</body>
+</html>

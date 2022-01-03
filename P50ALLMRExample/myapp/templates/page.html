@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pages</title>
+    <style>
+        table,th,tr,td{
+            padding:10px;
+            border:1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h2>Pages</h2>
+    <h3>All Pages</h3>
+    <table>
+        <tr>
+            <th>Page Name</th>
+            <th>Page Category</th>
+            <th>Page Publish Date</th>
+            <th>Page Created By</th>
+        </tr>
+        {% for page in pages %}
+        <tr>
+            <td>{{page.page_name}}</td>
+            <td>{{page.page_cat}}</td>
+            <td>{{page.page_publish_date}}</td>
+            <td>{{page.user}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    
+    <h3>Pages Filter by Category</h3>
+    <table>
+        <tr>
+            <th>Page Name</th>
+            <th>Page Category</th>
+            <th>Page Publish Date</th>
+            <th>Page Created By</th>
+        </tr>
+        {% for dt1 in data1 %}
+        <tr>
+            <td>{{dt1.page_name}}</td>
+            <td>{{dt1.page_cat}}</td>
+            <td>{{dt1.page_publish_date}}</td>
+            <td>{{dt1.user}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <h3>Pages Filtered by User Email</h3>
+    <table>
+        <tr>
+            <th>Page Name</th>
+            <th>Page Category</th>
+            <th>Page Publish Date</th>
+            <th>Page Created By</th>
+        </tr>
+        {% for dt2 in data2 %}
+        <tr>
+            <td>{{dt2.page_name}}</td>
+            <td>{{dt2.page_cat}}</td>
+            <td>{{dt2.page_publish_date}}</td>
+            <td>{{dt2.user}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <h3>
+        <a href="{% url 'home' %}">Home</a>
+    </h3>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+body{
+    margin:20px;
+    padding:10px;
+    background-color:#162323;
+    color:white;
+}
+a{
+    padding:10px;
+    color:white;
+}
+    </style>
+</head>
+<body>
+    <a href=" {% url 'user' %}">Users</a>
+    <a href=" {% url 'page' %}">Pages</a>
+    <a href=" {% url 'post' %}">Posts</a>
+    <a href=" {% url 'song' %}">Songs</a>
+    
+</body>
+</html>

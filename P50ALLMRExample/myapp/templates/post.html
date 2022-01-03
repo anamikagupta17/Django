@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Posts</title>
+    <style>
+        table,th,tr,td{
+            padding:10px;
+            border:1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h2>Posts</h2>
+    <h3>All Posts</h3>
+    <table>
+        <tr>
+            <th>Post Name</th>
+            <th>Post Category</th>
+            <th>Post Publish Date</th>
+            <th>Post Created By</th>
+        </tr>
+        {% for post in posts %}
+        <tr>
+            <td>{{post.post_title}}</td>
+            <td>{{post.post_cat}}</td>
+            <td>{{post.post_publish_date}}</td>
+            <td>{{post.user}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <h3>Posts Filtered By Publish Date</h3>
+    <table>
+        <tr>
+            <th>Post Name</th>
+            <th>Post Category</th>
+            <th>Post Publish Date</th>
+            <th>Post Created By</th>
+        </tr>
+        {% for dt1 in data1 %}
+        <tr>
+            <td>{{dt1.post_title}}</td>
+            <td>{{dt1.post_cat}}</td>
+            <td>{{dt1.post_publish_date}}</td>
+            <td>{{dt1.user}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <h3>Posts Filtered By Username</h3>
+    <table>
+        <tr>
+            <th>Post Name</th>
+            <th>Post Category</th>
+            <th>Post Publish Date</th>
+            <th>Post Created By</th>
+        </tr>
+        {% for dt2 in data2 %}
+        <tr>
+            <td>{{dt2.post_title}}</td>
+            <td>{{dt2.post_cat}}</td>
+            <td>{{dt2.post_publish_date}}</td>
+            <td>{{dt2.user}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    
+    <h3>
+        <a href="{% url 'home' %}">Home</a>
+    </h3>
+</body>
+</html>
