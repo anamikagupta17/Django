@@ -569,3 +569,9 @@ Model Realionship : we can give choice who can add page or not (page means other
     instance.user.delete()
  2. One to many : one user create multiple post or pages
  3. many to many :multiple users can write one song or vice versa
+
+
+
+ Class Based View: well organised code,clean code, specific method for get and post,reuse code
+ 1.base view
+ 2.generic view
