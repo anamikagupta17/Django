@@ -574,8 +574,11 @@ Model Realionship : we can give choice who can add page or not (page means other
 
  Class Based View: well organised code,clean code, specific method for get and post,reuse code
  1.base view
-    .View
+    .View: need to write get,post function depend on request
     .TempalteView :renders given template and capture parameter of url  
     .RedirectView : redirect to a given url
  2.generic view
  
+
+ ##**kwargs : when multiple keyword arguments need to pass can fetch by key
+ ##*args : argument without keywords can fetch by index
