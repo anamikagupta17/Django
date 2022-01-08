@@ -577,8 +577,12 @@ Model Realionship : we can give choice who can add page or not (page means other
     .View: need to write get,post function depend on request
     .TempalteView :renders given template and capture parameter of url  
     .RedirectView : redirect to a given url
- 2.generic view
- 
+ 2.generic view: reusablitiy for common task,predefined code for showing ,adding..
+   .Display View: list view,detail view : for displaying data
+   .Editing View : form view,Create view,Delete View,Update View
+   .Date View : date view,archive view...
+   
+   List View: by default template Name( eg modalClassname_list )
 
  ##**kwargs : when multiple keyword arguments need to pass can fetch by key
  ##*args : argument without keywords can fetch by index
