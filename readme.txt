@@ -586,6 +586,9 @@ Model Realionship : we can give choice who can add page or not (page means other
    Detail View : will give detail of a object for that Need a pk or slug becsue that is detailed view
    Form View : to show form and get form data
    Create View: it will give from and also save data into db
+   Update View: update data in same create form
+   Delete View : Delete data
+
 
  ##**kwargs : when multiple keyword arguments need to pass can fetch by key
  ##*args : argument without keywords can fetch by index
