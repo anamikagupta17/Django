@@ -596,4 +596,12 @@ Model Realionship : we can give choice who can add page or not (page means other
 
  Authentication View: we will get predefined login,logout,change password,reset password..... in auth 
   for using these all we need to include url and need to create templates
-  for testing mail  in local to get reset link in console we can add in setting : EMAIL_BACKEND='django.core.mail.backends.console.EmailBackend'
+
+
+  **for testing mail  in local to get reset link in console we can add in setting 
+  : EMAIL_BACKEND='django.core.mail.backends.console.EmailBackend'
+
+  login decorator: if login required set then any page will be display when logged in else redirect to login
+  eg: @login_required
+  @staff_member_required: only for staff. staff can see the view
+
