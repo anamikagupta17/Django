@@ -580,7 +580,7 @@ Model Realionship : we can give choice who can add page or not (page means other
  2.generic view: reusablitiy for common task,predefined code for showing ,adding..
    .Display View: list view,detail view : for displaying data
    .Editing View : form view,Create view,Delete View,Update View
-   .Date View : date view,archive view...
+   .Date View : date view,archive view,month archive,date archive...
    
    List View: by default template Name( eg modalClassname_list )
    Detail View : will give detail of a object for that Need a pk or slug becsue that is detailed view
@@ -592,3 +592,8 @@ Model Realionship : we can give choice who can add page or not (page means other
 
  ##**kwargs : when multiple keyword arguments need to pass can fetch by key
  ##*args : argument without keywords can fetch by index
+
+
+ Authentication View: we will get predefined login,logout,change password,reset password..... in auth 
+  for using these all we need to include url and need to create templates
+  for testing mail  in local to get reset link in console we can add in setting : EMAIL_BACKEND='django.core.mail.backends.console.EmailBackend'
