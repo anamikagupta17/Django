@@ -626,3 +626,20 @@ django.contrib.auth.view :
  }
 
  Pagination : one page to other page with next/previous links
+ FBV(FunctionBasedView): if we give string in url then it will redirect to first page and if int then redirect to last page
+ CBV(ClassBasedView) : only in 'last' case we write then redirect to last page else error,for error handling need to right a method 
+
+
+ Django Security: Django provide some protections and also user need to take care of few 
+ XSS(Cross Site Scripting) Protection
+ CSRF(Cross Site Request Forgery) Protection
+ SQL Injection Protection
+ Click Jacking Protection
+ SSL/HTTPS # you should use for your site
+ Host Header Validation
+ Refferrer Policy
+ Session Security
+ User Upload Content
+
+ * keep your SECRET_KEY always secret for every project
+ * limit the accessbility of cache system and db using firewll :good ieda
