@@ -600,8 +600,13 @@ Model Realionship : we can give choice who can add page or not (page means other
 
   **for testing mail  in local to get reset link in console we can add in setting 
   : EMAIL_BACKEND='django.core.mail.backends.console.EmailBackend'
+  for changing by default login redirect , add in setting :LOGIN_REDIRECT_URL='/dashboard/'
+
 
   login decorator: if login required set then any page will be display when logged in else redirect to login
   eg: @login_required
   @staff_member_required: only for staff. staff can see the view
 
+django.contrib.auth.view :
+ LoginView: django.contrib.auth.view.LoginView
+ LogutView: django.contrib.auth.view.LogutView,Password,.....
