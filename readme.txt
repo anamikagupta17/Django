@@ -610,3 +610,19 @@ Model Realionship : we can give choice who can add page or not (page means other
 django.contrib.auth.view :
  LoginView: django.contrib.auth.view.LoginView
  LogutView: django.contrib.auth.view.LogutView,Password,.....
+
+
+ connect other db settings.py:
+ DATABASE={
+  'default':
+  {
+    'ENGINE':'django.db.backends.mysql', //django.db.backends.oracle or postgres for oracle,postgres same for others
+    'NAME':'db_name',
+    'USER':'root',
+    'PASSWORD':'',
+    'HOST':'localhost',
+    'PORT':'port number'#optional
+  }
+ }
+
+ Pagination : one page to other page with next/previous links
