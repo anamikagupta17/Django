@@ -69,7 +69,7 @@ request: request object
 template_name:tempalte file full name or sequence of template files
 content type: mime type defualt 'text/html',
 status: status code for response default 200
-using: name of tempalte engine to use for loadin template
+using: name of tempalte engine to use for loading template
 
 * APP_DIR shoud be true if we create 'template inside application' otherwise it will not take template and no template directory path need to give 
 eg:use of template: P4 
